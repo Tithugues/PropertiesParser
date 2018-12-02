@@ -1,25 +1,25 @@
 <?php
 declare(strict_types=1);
 
-use hpeccatte\PropertiesParser\CommentRemover;
+use hpeccatte\PropertiesParser\CommentRemoverFormatter;
 use PHPUnit\Framework\TestCase;
 
-class CommentRemoverTest extends TestCase
+class CommentRemoverFormatterTest extends TestCase
 {
     /**
-     * @dataProvider commentRemovingProvider
+     * @dataProvider formatProvider
      *
      * @param string $expected
      * @param string $content
      */
-    public function testRemoveComment(string $expected, string $content)
+    public function testFormat(string $expected, string $content)
     {
-        $commentRemover = new CommentRemover();
-        $variables = $commentRemover->removeComment($content);
+        $formatter = new CommentRemoverFormatter();
+        $variables = $formatter->format($content);
         $this::assertEquals($expected, $variables);
     }
 
-    public function commentRemovingProvider()
+    public function formatProvider()
     {
         return [
             [

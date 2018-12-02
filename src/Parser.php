@@ -11,10 +11,10 @@ class Parser
     public function parse(string $content)
     {
         //Remove comment lines
-        $content = (new CommentRemover())->removeComment($content);
+        $content = (new CommentRemoverFormatter())->format($content);
 
         //Concat multilines
-        $content = (new Inliner())->inline($content);
+        $content = (new OnelineFormatter())->format($content);
 
         //Extract keys and values
         return (new Extractor())->extract($content);

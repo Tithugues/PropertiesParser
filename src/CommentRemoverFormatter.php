@@ -3,9 +3,14 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
-class CommentRemover
+/**
+ * Class CommentRemoverFormatter
+ *
+ * Remove commented lines
+ */
+class CommentRemoverFormatter implements Formatter
 {
-    public function removeComment($content): string
+    public function format($content): string
     {
         $content = \preg_replace('`^ *(!|;).*$`m', null, $content);
         $content = \preg_replace('`\n{2,}`', "\n", $content);

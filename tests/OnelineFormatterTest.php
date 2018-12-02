@@ -1,25 +1,25 @@
 <?php
 declare(strict_types=1);
 
-use hpeccatte\PropertiesParser\Extractor;
+use hpeccatte\PropertiesParser\OnelineFormatter;
 use PHPUnit\Framework\TestCase;
 
-class InlinerTest extends TestCase
+class OnelineFormatterTest extends TestCase
 {
     /**
-     * @dataProvider inliningProvider
+     * @dataProvider formatProvider
      *
      * @param string $expected Content inlined
      * @param string $content Content multilined
      */
-    public function testInline(string $expected, string $content)
+    public function testFormat(string $expected, string $content)
     {
-        $inliner = new Extractor();
-        $variables = $inliner->inline($content);
+        $formatter = new OnelineFormatter();
+        $variables = $formatter->format($content);
         $this::assertEquals($expected, $variables);
     }
 
-    public function inliningProvider()
+    public function formatProvider()
     {
         return [
             [

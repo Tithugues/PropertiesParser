@@ -3,9 +3,14 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
-class Inliner
+/**
+ * Class OnelineFormatter
+ *
+ * Replace multiline values by oneline values
+ */
+class OnelineFormatter implements Formatter
 {
-    public function inline(string $content): string
+    public function format(string $content): string
     {
         \preg_match_all('`(?<!\\\\)(?:\\\\\\\\)*\\\\\R`', $content, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE);
         $matches = \array_reverse($matches);
