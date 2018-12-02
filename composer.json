@@ -1,0 +1,23 @@
+{
+  "name": "hpeccatte/properties-parser",
+  "description": "Parser for properties files.",
+  "minimum-stability": "stable",
+  "keywords": ["properties", "parser"],
+  "type": "library",
+  "authors": [
+    {
+      "name": "Hugues Peccatte",
+      "email": "hugues.peccatte@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.4.4"
+  },
+  "autoload": {
+    "psr-4": { "hpeccatte\\PropertiesParser\\": "src/" }
+  }
+}
