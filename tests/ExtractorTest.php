@@ -12,7 +12,7 @@ class ExtractorTest extends TestCase
      * @param array $expected
      * @param string $content
      */
-    public function testExtract(array $expected, string $content)
+    public function testExtract(array $expected, string $content): void
     {
         $extractor = new Extractor();
         $variables = $extractor->extract($content);

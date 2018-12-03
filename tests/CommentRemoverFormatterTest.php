@@ -12,14 +12,14 @@ class CommentRemoverFormatterTest extends TestCase
      * @param string $expected
      * @param string $content
      */
-    public function testFormat(string $expected, string $content)
+    public function testFormat(string $expected, string $content): void
     {
         $formatter = new CommentRemoverFormatter();
         $variables = $formatter->format($content);
         $this::assertEquals($expected, $variables);
     }
 
-    public function formatProvider()
+    public function formatProvider(): array
     {
         return [
             [

@@ -12,14 +12,14 @@ class ParserTest extends TestCase
      * @param array $expected
      * @param string $content
      */
-    public function testParse(array $expected, string $content)
+    public function testParse(array $expected, string $content): void
     {
         $parser = new Parser();
         $variables = $parser->parse($content);
         $this::assertEquals($expected, $variables);
     }
 
-    public function parsingProvider()
+    public function parsingProvider(): array
     {
         return [
             [
