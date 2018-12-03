@@ -22,7 +22,7 @@ class Extractor
         //);
         $keys = \array_column($matches, 'key');
         $values = \array_column($matches, 'value');
-        \array_walk($keys, function(&$value) { $value = \trim($value); });
+        \array_walk($keys, function(&$value) { $value = \ltrim($value); });
         \array_walk($values, function(&$value) { $value = \trim($value); });
 
         return \array_combine($keys, $values);

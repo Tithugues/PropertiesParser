@@ -39,6 +39,11 @@ class ExtractorTest extends TestCase
             [['key' => 'value'], 'key :  value'],
             [['key' => 'value'], 'key :value'],
             [['key' => 'value'], 'key: value'],
+            [['key\=long' => 'value'], 'key\=long=value'],
+            [['key\:long' => 'value'], 'key\:long:value'],
+            [['key\ long' => 'value'], 'key\ long value'],
+            [['key\ ' => 'long value'], 'key\  long value'],
+            [['key\=long' => 'value'], 'key\=long:value'],
             [
                 ['key' => 'value new line'],
                 'key=value new line'
