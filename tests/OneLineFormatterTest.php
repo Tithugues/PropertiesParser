@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-use hpeccatte\PropertiesParser\OnelineFormatter;
+use hpeccatte\PropertiesParser\OneLineFormatter;
 use PHPUnit\Framework\TestCase;
 
-class OnelineFormatterTest extends TestCase
+class OneLineFormatterTest extends TestCase
 {
     /**
      * @dataProvider formatProvider
@@ -12,14 +12,14 @@ class OnelineFormatterTest extends TestCase
      * @param string $expected Content inlined
      * @param string $content Content multilined
      */
-    public function testFormat(string $expected, string $content)
+    public function testFormat(string $expected, string $content): void
     {
-        $formatter = new OnelineFormatter();
+        $formatter = new OneLineFormatter();
         $variables = $formatter->format($content);
         $this::assertEquals($expected, $variables);
     }
 
-    public function formatProvider()
+    public function formatProvider(): array
     {
         return [
             [

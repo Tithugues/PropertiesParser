@@ -19,7 +19,7 @@ class Parser
         if (null === $formatter) {
             $formatter = new CompositeFormatter();
             $formatter->addFormatter(new CommentRemoverFormatter())
-                ->addFormatter(new OnelineFormatter());
+                ->addFormatter(new OneLineFormatter());
         }
         if (null === $extractor) {
             $extractor = new Extractor();
