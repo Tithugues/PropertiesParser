@@ -1,5 +1,6 @@
 {
   "name": "hpeccatte/properties-parser",
+  "license": "MIT",
   "description": "Parser for properties files.",
   "minimum-stability": "stable",
   "keywords": ["properties", "parser"],
