@@ -6,7 +6,7 @@ namespace hpeccatte\PropertiesParser;
 /**
  * Class OneLineFormatter
  *
- * Replace multiline values by oneline values
+ * Replace multilines values by one-line values
  */
 class OneLineFormatter implements Formatter
 {

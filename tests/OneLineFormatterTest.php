@@ -9,8 +9,8 @@ class OneLineFormatterTest extends TestCase
     /**
      * @dataProvider formatProvider
      *
-     * @param string $expected Content inlined
-     * @param string $content Content multilined
+     * @param string $expected Content inline
+     * @param string $content Content multilines
      */
     public function testFormat(string $expected, string $content): void
     {
