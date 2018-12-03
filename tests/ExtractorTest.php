@@ -19,7 +19,13 @@ class ExtractorTest extends TestCase
         $this::assertEquals($expected, $variables);
     }
 
-    public function extractingProvider()
+    /**
+     * Provider for extract method
+     * @return array[] Each sub-array contains:
+     *                 - an array of keys/values
+     *                 - a string which may be a properties file content
+     */
+    public function extractingProvider(): array
     {
         return [
             [['key' => 'value'], 'key=value'],

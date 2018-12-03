@@ -29,7 +29,12 @@ class Parser
         $this->extractor = $extractor;
     }
 
-    public function parse(string $content)
+    /**
+     * Return the variables extracted from the properties content
+     * @param string $content
+     * @return array
+     */
+    public function parse(string $content): array
     {
         $content = $this->formatter->format($content);
 
