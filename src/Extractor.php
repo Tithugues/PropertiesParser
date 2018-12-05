@@ -14,15 +14,9 @@ class Extractor
             \PREG_SET_ORDER
         );
 
-        //$keys = array_map(
-        //    function($match) {
-        //        return $match['key'];
-        //    },
-        //    $matches
-        //);
         $keys = \array_column($matches, 'key');
         $values = \array_column($matches, 'value');
-        \array_walk($keys, function(&$value) { $value = \ltrim($value); });
+        \array_walk($keys, function(&$value) { $value = \stripslashes(\ltrim($value)); });
         \array_walk($values, function(&$value) { $value = \trim($value); });
 
         return \array_combine($keys, $values);
