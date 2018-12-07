@@ -10,7 +10,11 @@ namespace hpeccatte\PropertiesParser;
  */
 class CommentRemoverFormatter implements Formatter
 {
-    public function format($content): string
+    /**
+     * @param string $content Content to format
+     * @return string Content formatted
+     */
+    public function format(string $content): string
     {
         $content = \preg_replace('`^ *(!|;).*$`m', null, $content);
         $content = \preg_replace('`\n{2,}`', "\n", $content);
