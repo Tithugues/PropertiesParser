@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-use hpeccatte\PropertiesParser\CommentRemoverFormatter;
+use hpeccatte\PropertiesParser\EmptyLineRemoverFormatter;
 use PHPUnit\Framework\TestCase;
 
-class CommentRemoverFormatterTest extends TestCase
+class EmptyLineRemoverFormatterTest extends TestCase
 {
     /**
      * @dataProvider formatProvider
@@ -14,7 +14,7 @@ class CommentRemoverFormatterTest extends TestCase
      */
     public function testFormat(string $expected, string $content): void
     {
-        $formatter = new CommentRemoverFormatter();
+        $formatter = new EmptyLineRemoverFormatter();
         $variables = $formatter->format($content);
         $this::assertEquals($expected, $variables);
     }
@@ -34,43 +34,18 @@ key2=value2',
             ],
             [
                 'key=value
-
 key2=value2',
                 'key=value
-!Comment
+
 key2=value2',
             ],
             [
                 'key=value
-
 key2=value2',
                 'key=value
-#Comment
-key2=value2',
-            ],
-            [
-                'key=value
 
 
 key2=value2',
-                'key=value
-!Comment
-#Comment
-key2=value2',
-            ],
-            [
-                '
-key=value
-
-
-key2=value2
-',
-                '!Comment
-key=value
-!Comment
-!Comment#Comment
-key2=value2
-',
             ],
         ];
     }

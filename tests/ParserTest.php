@@ -45,6 +45,17 @@ key=value2'
                      new line'
             ],
             [
+                ['key' => 'value !Comment'],
+                'key=value \\
+                     !Comment'
+            ],
+            [
+                ['key' => 'value which is long'],
+                'key=value \\
+!Comment
+which is long'
+            ],
+            [
                 ['key' => 'value new line and another one'],
                 'key=value \\
                      new line \\

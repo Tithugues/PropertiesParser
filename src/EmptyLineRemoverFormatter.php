@@ -4,11 +4,11 @@ declare(strict_types=1);
 namespace hpeccatte\PropertiesParser;
 
 /**
- * Class CommentRemoverFormatter
+ * Class EmptyLineRemoverFormatter
  *
  * Remove commented lines
  */
-class CommentRemoverFormatter implements Formatter
+class EmptyLineRemoverFormatter implements Formatter
 {
     /**
      * @param string $content Content to format
@@ -16,7 +16,8 @@ class CommentRemoverFormatter implements Formatter
      */
     public function format(string $content): string
     {
-        $content = \preg_replace('`^(#|!).*$`m', null, $content);
+        $content = \preg_replace('`\n{2,}`', "\n", $content);
+        $content = \rtrim($content);
         return $content;
     }
 }
