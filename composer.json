@@ -3,7 +3,7 @@
   "license": "MIT",
   "description": "Parser for properties files.",
   "minimum-stability": "stable",
-  "keywords": ["properties", "parser"],
+  "keywords": ["properties", "file", "format", "parser"],
   "type": "library",
   "authors": [
     {
