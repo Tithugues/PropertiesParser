@@ -21,7 +21,7 @@ A property can also be defined on multiple lines:
           is \
           multilined
 
-In this case, the key will be `key` and the value `value which is multilined`.
+In this case, the property will be `property` and the value `value which is multilined`.
 
 ### Comments
 
