@@ -2,7 +2,7 @@
 
 Here is a library to retrieve the keys of a `.properties` file.
 
-It seems that `.properties` files are mainly used
+It seems that `.properties` files are mainly used by Java programs. But you may have also defined a `properties` file in a project or would like to use the same file with both languages.
 
 ## `properties` file format
 
