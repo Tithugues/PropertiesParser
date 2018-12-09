@@ -8,3 +8,4 @@ install:
 
 script:
   - vendor/bin/phpunit --no-configuration tests
+  - vendor/bin/phpcs --standard=PSR2 src/ tests/
