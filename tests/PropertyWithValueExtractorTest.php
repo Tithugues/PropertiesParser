@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser\Tests;
 
-use hpeccatte\PropertiesParser\Extractor;
+use hpeccatte\PropertiesParser\PropertyWithValueExtractor;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test class of Extractor
+ * Test class of PropertyWithValueExtractor
  */
-class ExtractorTest extends TestCase
+class PropertyWithValueExtractorTest extends TestCase
 {
     /**
      * @dataProvider extractingProvider
@@ -19,7 +19,7 @@ class ExtractorTest extends TestCase
      */
     public function testExtract(array $expected, string $content): void
     {
-        $extractor = new Extractor();
+        $extractor = new PropertyWithValueExtractor();
         $variables = $extractor->extract($content);
         $this::assertEquals($expected, $variables);
     }

@@ -44,6 +44,16 @@ class ParserTest extends TestCase
 property2:value2'
             ],
             [
+                [
+                    'property' => 'value',
+                    'property2' => 'value2',
+                    'property3' => null,
+                ],
+                'property=value
+property2:value2
+property3'
+            ],
+            [
                 ['property' => 'value2'],
                 'property=value
 property=value2'

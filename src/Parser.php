@@ -31,7 +31,9 @@ class Parser
                 ->addFormatter(new OneLineFormatter());
         }
         if (null === $extractor) {
-            $extractor = new Extractor();
+            $extractor = new CompositeExtractor();
+            $extractor->addExtractor(new PropertyWithValueExtractor())
+                ->addExtractor(new NoValueExtractor());
         }
 
         $this->formatter = $formatter;
