@@ -47,7 +47,7 @@ class Parser
     {
         $content = $this->formatter->format($content);
 
-        //Extract keys and values
+        //Extract properties and values
         return $this->extractor->extract($content);
     }
 }

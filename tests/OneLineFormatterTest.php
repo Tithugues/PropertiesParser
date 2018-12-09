@@ -32,36 +32,36 @@ class OneLineFormatterTest extends TestCase
     {
         return [
             [
-                'key=value',
-                'key=value'
+                'property=value',
+                'property=value'
             ],
             [
-                'key=value new line',
-                'key=value \\
+                'property=value new line',
+                'property=value \\
                      new line',
             ],
             [
-                'key=value new line and another one',
-                'key=value \\
+                'property=value new line and another one',
+                'property=value \\
                      new line \\
                      and another one',
             ],
             [
-                'key=value \\\\
-key2=value2',
-                'key=value \\\\
-key2=value2',
+                'property=value \\\\
+property2=value2',
+                'property=value \\\\
+property2=value2',
             ],
             [
-                'key=value \\\\value2',
-                'key=value \\\\\\
+                'property=value \\\\value2',
+                'property=value \\\\\\
                      value2',
             ],
             [
-                'key=value \\\\\\\\
-key2=value2',
-                'key=value \\\\\\\\
-key2=value2',
+                'property=value \\\\\\\\
+property2=value2',
+                'property=value \\\\\\\\
+property2=value2',
             ],
         ];
     }

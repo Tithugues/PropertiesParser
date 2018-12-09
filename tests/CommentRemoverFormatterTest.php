@@ -32,53 +32,53 @@ class CommentRemoverFormatterTest extends TestCase
     {
         return [
             [
-                'key=value',
-                'key=value'
+                'property=value',
+                'property=value'
             ],
             [
-                'key=value
-key2=value2',
-                'key=value
-key2=value2',
+                'property=value
+property2=value2',
+                'property=value
+property2=value2',
             ],
             [
-                'key=value
+                'property=value
 
-key2=value2',
-                'key=value
+property2=value2',
+                'property=value
 !Comment
-key2=value2',
+property2=value2',
             ],
             [
-                'key=value
+                'property=value
 
-key2=value2',
-                'key=value
+property2=value2',
+                'property=value
 #Comment
-key2=value2',
+property2=value2',
             ],
             [
-                'key=value
+                'property=value
 
 
-key2=value2',
-                'key=value
+property2=value2',
+                'property=value
 !Comment
 #Comment
-key2=value2',
+property2=value2',
             ],
             [
                 '
-key=value
+property=value
 
 
-key2=value2
+property2=value2
 ',
                 '!Comment
-key=value
+property=value
 !Comment
 !Comment#Comment
-key2=value2
+property2=value2
 ',
             ],
         ];

@@ -32,29 +32,29 @@ class EmptyLineRemoverFormatterTest extends TestCase
     {
         return [
             [
-                'key=value',
-                'key=value'
+                'property=value',
+                'property=value'
             ],
             [
-                'key=value
-key2=value2',
-                'key=value
-key2=value2',
+                'property=value
+property2=value2',
+                'property=value
+property2=value2',
             ],
             [
-                'key=value
-key2=value2',
-                'key=value
+                'property=value
+property2=value2',
+                'property=value
 
-key2=value2',
+property2=value2',
             ],
             [
-                'key=value
-key2=value2',
-                'key=value
+                'property=value
+property2=value2',
+                'property=value
 
 
-key2=value2',
+property2=value2',
             ],
         ];
     }

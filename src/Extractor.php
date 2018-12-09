@@ -16,16 +16,16 @@ class Extractor
     public function extract(string $content): array
     {
         \preg_match_all(
-            '`^(?P<key>.*)(?:(?<!\\\\) [=:]|(?<!\\\\) |(?<!\\\\):|(?<!\\\\)=)(?P<value>.*)$`Um',
+            '`^(?P<property>.*)(?:(?<!\\\\) [=:]|(?<!\\\\) |(?<!\\\\):|(?<!\\\\)=)(?P<value>.*)$`Um',
             $content,
             $matches,
             \PREG_SET_ORDER
         );
 
-        $keys = \array_column($matches, 'key');
+        $properties = \array_column($matches, 'property');
         $values = \array_column($matches, 'value');
         \array_walk(
-            $keys,
+            $properties,
             function (&$value) {
                 $value = \stripslashes(\ltrim($value));
             }
@@ -37,6 +37,6 @@ class Extractor
             }
         );
 
-        return \array_combine($keys, $values);
+        return \array_combine($properties, $values);
     }
 }

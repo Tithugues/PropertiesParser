@@ -27,49 +27,49 @@ class ExtractorTest extends TestCase
     /**
      * Provider for extract method
      * @return array[] Each sub-array contains:
-     *                 - an array of keys/values
+     *                 - an array of properties/values
      *                 - a string which may be a properties file content
      */
     public function extractingProvider(): array
     {
         return [
-            [['key' => 'value'], 'key=value'],
-            [['key' => 'value'], 'key:value'],
-            [['key' => 'value'], 'key value'],
-            [['key' => 'value'], 'key  value'],
-            [['key' => 'value'], 'key = value'],
-            [['key' => 'value'], 'key =value'],
-            [['key' => 'value'], 'key= value'],
-            [['key' => 'value'], 'key : value'],
-            [['key' => 'value'], 'key :  value'],
-            [['key' => 'value'], 'key :value'],
-            [['key' => 'value'], 'key: value'],
-            [['key=long' => 'value'], 'key\=long=value'],
-            [['key:long' => 'value'], 'key\:long:value'],
-            [['key long' => 'value'], 'key\ long value'],
-            [['key ' => 'long value'], 'key\  long value'],
-            [['key=long' => 'value'], 'key\=long:value'],
+            [['property' => 'value'], 'property=value'],
+            [['property' => 'value'], 'property:value'],
+            [['property' => 'value'], 'property value'],
+            [['property' => 'value'], 'property  value'],
+            [['property' => 'value'], 'property = value'],
+            [['property' => 'value'], 'property =value'],
+            [['property' => 'value'], 'property= value'],
+            [['property' => 'value'], 'property : value'],
+            [['property' => 'value'], 'property :  value'],
+            [['property' => 'value'], 'property :value'],
+            [['property' => 'value'], 'property: value'],
+            [['property=long' => 'value'], 'property\=long=value'],
+            [['property:long' => 'value'], 'property\:long:value'],
+            [['property long' => 'value'], 'property\ long value'],
+            [['property ' => 'long value'], 'property\  long value'],
+            [['property=long' => 'value'], 'property\=long:value'],
             [
-                ['key' => 'value new line'],
-                'key=value new line'
+                ['property' => 'value new line'],
+                'property=value new line'
             ],
             [
-                ['key' => 'value new line and another one'],
-                'key=value new line and another one'
+                ['property' => 'value new line and another one'],
+                'property=value new line and another one'
             ],
             [
-                ['key' => 'value \\\\', 'key2' => 'value2'],
-                'key=value \\\\
-key2=value2'
+                ['property' => 'value \\\\', 'property2' => 'value2'],
+                'property=value \\\\
+property2=value2'
             ],
             [
-                ['key' => 'value \\\\value2'],
-                'key=value \\\\value2'
+                ['property' => 'value \\\\value2'],
+                'property=value \\\\value2'
             ],
             [
-                ['key' => 'value \\\\\\\\', 'key2' => 'value2'],
-                'key=value \\\\\\\\
-key2=value2'
+                ['property' => 'value \\\\\\\\', 'property2' => 'value2'],
+                'property=value \\\\\\\\
+property2=value2'
             ],
         ];
     }
