@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Tithugues/PropertiesParser.svg?branch=master)](https://travis-ci.org/Tithugues/PropertiesParser)
+
 # Properties Parser
 
 Here is a **PHP** library to retrieve the properties of a `.properties` file.
