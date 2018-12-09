@@ -12,11 +12,11 @@ It seems that `.properties` files are mainly used by Java programs. But you may 
 
 ### Define a property
 
-In a `.properties` file, key/value can be separated by `=`, `:` or a whitespace.
+In a `.properties` file, property/value can be separated by `=`, `:` or a whitespace.
 
 A property can also be defined on multiple lines:
 
-    key = value \
+    property = value \
           which \
           is \
           multilined
