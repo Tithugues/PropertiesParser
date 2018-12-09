@@ -11,7 +11,7 @@ a **PHP** project or would like to use the same file with both languages.
 
     composer require hpeccatte/properties-parser
 
-## `properties` file format
+## `.properties` file format
 
 ### Define a property
 
