@@ -1,9 +1,14 @@
 <?php
 declare(strict_types=1);
 
+namespace hpeccatte\PropertiesParser\Tests;
+
 use hpeccatte\PropertiesParser\Parser;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test class of Parser
+ */
 class ParserTest extends TestCase
 {
     /**
@@ -19,6 +24,10 @@ class ParserTest extends TestCase
         $this::assertEquals($expected, $variables);
     }
 
+    /**
+     * Provider for testParse
+     * @return array
+     */
     public function parsingProvider(): array
     {
         return [

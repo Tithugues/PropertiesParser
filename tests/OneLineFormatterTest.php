@@ -1,9 +1,14 @@
 <?php
 declare(strict_types=1);
 
+namespace hpeccatte\PropertiesParser\Tests;
+
 use hpeccatte\PropertiesParser\OneLineFormatter;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test class of OneLineFormatter
+ */
 class OneLineFormatterTest extends TestCase
 {
     /**
@@ -19,6 +24,10 @@ class OneLineFormatterTest extends TestCase
         $this::assertEquals($expected, $variables);
     }
 
+    /**
+     * Provider for testFormat
+     * @return array
+     */
     public function formatProvider(): array
     {
         return [

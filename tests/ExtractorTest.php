@@ -1,9 +1,14 @@
 <?php
 declare(strict_types=1);
 
+namespace hpeccatte\PropertiesParser\Tests;
+
 use hpeccatte\PropertiesParser\Extractor;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test class of Extractor
+ */
 class ExtractorTest extends TestCase
 {
     /**

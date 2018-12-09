@@ -10,6 +10,11 @@ namespace hpeccatte\PropertiesParser;
  */
 class OneLineFormatter implements Formatter
 {
+    /**
+     * Format the content
+     * @param string $content Content to format
+     * @return string Formatted content
+     */
     public function format(string $content): string
     {
         \preg_match_all('`(?<!\\\\)(?:\\\\\\\\)*\\\\\R`', $content, $matches, \PREG_SET_ORDER | \PREG_OFFSET_CAPTURE);

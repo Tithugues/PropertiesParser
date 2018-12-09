@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
+/**
+ * Formatter of content
+ */
 interface Formatter
 {
     /**

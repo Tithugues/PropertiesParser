@@ -1,9 +1,14 @@
 <?php
 declare(strict_types=1);
 
+namespace hpeccatte\PropertiesParser\Tests;
+
 use hpeccatte\PropertiesParser\EmptyLineRemoverFormatter;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test class of EmptyLineRemoverFormatter
+ */
 class EmptyLineRemoverFormatterTest extends TestCase
 {
     /**
@@ -19,6 +24,10 @@ class EmptyLineRemoverFormatterTest extends TestCase
         $this::assertEquals($expected, $variables);
     }
 
+    /**
+     * Provider for testFormat
+     * @return array
+     */
     public function formatProvider(): array
     {
         return [

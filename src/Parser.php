@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
+/**
+ * Parser of properties
+ */
 class Parser
 {
     /** @var Formatter */
@@ -14,6 +17,11 @@ class Parser
     /** @var string */
     protected $content;
 
+    /**
+     * Parser constructor
+     * @param Formatter|null $formatter Formatter of content
+     * @param Extractor|null $extractor Extractor of content
+     */
     public function __construct(Formatter $formatter = null, Extractor $extractor = null)
     {
         if (null === $formatter) {

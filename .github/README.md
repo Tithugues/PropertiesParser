@@ -2,7 +2,8 @@
 
 Here is a **PHP** library to retrieve the properties of a `.properties` file.
 
-It seems that `.properties` files are mainly used by Java programs. But you may have also defined a `properties` file in a **PHP** project or would like to use the same file with both languages.
+It seems that `.properties` files are mainly used by Java programs. But you may have also defined a `properties` file in
+a **PHP** project or would like to use the same file with both languages.
 
 ## Installation
 
@@ -29,4 +30,5 @@ You can define comments in your file by starting a line with `#` or `!` characte
 
 ## References
 
-This parser was implemented to try to match as much as possible the behavior defined by the [Java Properties Parser](https://docs.oracle.com/javase/10/docs/api/java/util/Properties.html).
+This parser was implemented to try to match as much as possible the behavior defined by the
+[Java Properties Parser](https://docs.oracle.com/javase/10/docs/api/java/util/Properties.html).
