@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
+use function preg_replace;
+use function rtrim;
+
 /**
  * Class EmptyLineRemoverFormatter
  *
@@ -16,8 +19,8 @@ class EmptyLineRemoverFormatter implements Formatter
      */
     public function format(string $content): string
     {
-        $content = \preg_replace('`\n{2,}`', "\n", $content);
-        $content = \rtrim($content);
+        $content = preg_replace('`\n{2,}`', "\n", $content);
+        $content = rtrim($content);
         return $content;
     }
 }

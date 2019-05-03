@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
+use function array_fill_keys;
+use function explode;
+use const PHP_EOL;
+
 /**
  * Extractor of properties without value
  */
@@ -15,7 +19,7 @@ class NoValueExtractor implements Extractor
      */
     public function extract(string $content): array
     {
-        $properties = \explode(\PHP_EOL, $content);
-        return \array_fill_keys($properties, null);
+        $properties = explode(PHP_EOL, $content);
+        return array_fill_keys($properties, null);
     }
 }

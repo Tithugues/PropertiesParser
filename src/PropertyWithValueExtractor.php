@@ -3,6 +3,14 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
+use function array_column;
+use function array_combine;
+use function array_walk;
+use function ltrim;
+use function preg_match_all;
+use const PREG_SET_ORDER;
+use function stripslashes;
+
 /**
  * Extractor of properties / values from a content
  */
@@ -15,28 +23,31 @@ class PropertyWithValueExtractor implements Extractor
      */
     public function extract(string $content): array
     {
-        \preg_match_all(
+        //(?P<property>.*) => look for the property name
+        //(?:(?<!\\\\) [=:]|(?<!\\\\) |(?<!\\\\):|(?<!\\\\)=) => look for the separator
+        //(?P<value>.*) => look for the value
+        preg_match_all(
             '`^(?P<property>.*)(?:(?<!\\\\) [=:]|(?<!\\\\) |(?<!\\\\):|(?<!\\\\)=)(?P<value>.*)$`Um',
             $content,
             $matches,
-            \PREG_SET_ORDER
+            PREG_SET_ORDER
         );
 
-        $properties = \array_column($matches, 'property');
-        $values = \array_column($matches, 'value');
-        \array_walk(
+        $properties = array_column($matches, 'property');
+        $values = array_column($matches, 'value');
+        array_walk(
             $properties,
-            function (&$value) {
-                $value = \stripslashes(\ltrim($value));
+            static function (&$value) {
+                $value = stripslashes(ltrim($value));
             }
         );
-        \array_walk(
+        array_walk(
             $values,
-            function (&$value) {
+            static function (&$value) {
                 $value = \trim($value);
             }
         );
 
-        return \array_combine($properties, $values);
+        return array_combine($properties, $values);
     }
 }

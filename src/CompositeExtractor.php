@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
+use function array_merge;
+use function explode;
+use const PHP_EOL;
+
 /**
  * Class CompositeExtractor
  *
@@ -34,14 +38,14 @@ class CompositeExtractor implements Extractor
      */
     public function extract(string $content): array
     {
-        $lines = \explode(\PHP_EOL, $content);
+        $lines = explode(PHP_EOL, $content);
 
         $properties = [];
 
         foreach ($lines as $line) {
             foreach ($this->extractors as $formatter) {
                 if (!empty($currentProperties = $formatter->extract($line))) {
-                    $properties = \array_merge($properties, $currentProperties);
+                    $properties = array_merge($properties, $currentProperties);
                     break;
                 }
             }

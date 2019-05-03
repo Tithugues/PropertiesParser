@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace hpeccatte\PropertiesParser;
 
+use function preg_replace;
+
 /**
  * Class CommentRemoverFormatter
  *
@@ -16,7 +18,7 @@ class CommentRemoverFormatter implements Formatter
      */
     public function format(string $content): string
     {
-        $content = \preg_replace('`^(#|!).*$`m', null, $content);
+        $content = preg_replace('`^(#|!).*$`m', null, $content);
         return $content;
     }
 }
