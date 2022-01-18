@@ -18,7 +18,6 @@ class CommentRemoverFormatter implements Formatter
      */
     public function format(string $content): string
     {
-        $content = preg_replace('`^(#|!).*$`m', null, $content);
-        return $content;
+        return preg_replace('`^([#!]).*$`m', '', $content);
     }
 }
