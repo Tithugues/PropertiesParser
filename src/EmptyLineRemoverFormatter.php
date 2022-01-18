@@ -19,8 +19,6 @@ class EmptyLineRemoverFormatter implements Formatter
      */
     public function format(string $content): string
     {
-        $content = preg_replace('`\n{2,}`', "\n", $content);
-        $content = rtrim($content);
-        return $content;
+        return rtrim(preg_replace('`\n{2,}`', "\n", $content));
     }
 }
